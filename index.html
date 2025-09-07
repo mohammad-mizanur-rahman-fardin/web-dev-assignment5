@@ -1,11 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joruri Seba</title>
+    <title>Emergency Hotline</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .custom-font {
+            font-family: "Hind Madurai", sans-serif;
+            font-style: normal;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="custom-font">
+    <nav class="flex justify-between items-center px-4 py-2">
+        <div class="flex gap-x-1 justify-center items-center">
+            <img src="assets/logo.png" alt="" class="w-8">
+            <p class="font-bold text-[#006747] w-[50px] leading-4 ml-2">Emergency Service</p>
+        </div>
+        <div class="flex justify-between items-center gap-x-4">
+            <div
+                class="flex justify-center font-bold items-center gap-x-2 bg-[#41FF92]/10 bg-opacity-5 py-1 rounded-2xl w-[80px]">
+                <span id="heart-available">0</span>
+                <img src="assets/heart.png" alt="" class="w-[25%]">
+            </div>
+            <div
+                class="flex justify-center font-bold items-center gap-x-2 bg-[#41FF92]/10 bg-opacity-10 py-1 rounded-2xl w-[80px]">
+                <span id="coin-available">100</span>
+                <img src="assets/coin.png" alt="" class="w-[25%]">
+            </div>
+            <div class="flex gap-x-1 justify-center items-center text-white bg-[#00A63E] rounded-2xl px-4 py-1">
+                <p class="font-bold "> <span id="copy-count">0</span> copy</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- hero section  -->
+    <div
+        class="flex flex-col justify-center items-center gap-y-4 mt-1 bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] text-white py-2">
+        <img src="assets/logo-dark.png" alt="" class="w-20 mt-2">
+        <p class="flex font-bold text-2xl">জরুরি সেবা ডিরেক্টরি</p>
+        <p class="mb-2 mx-5">Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic of
+            Bangladesh</p>
+    </div>
+
+
+    <div class="md:flex gap-x-1 px-4 py-2 bg-[#e3f9eb]">
+
+        <!-- card holder  -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6 mx-auto w-[70%] p-4 drop-shadow">
+
+            <!-- card 1 -->
+            <div class="card flex flex-col gap-y-2 bg-white rounded-[12px] p-4">
+                <div class="ml-2 flex justify-between items-center">
+                    <div class="bg-[#FFE3E1] rounded-[12px] w-12 h-12 flex justify-center items-center">
+                        <img src="assets/emergency.png" alt="" class="w-6 h-6">
+                    </div>
+                    <img src="assets/heart-new.png" alt="new-heart-icon" class="heart-class w-4 h-4 mr-2">
+                </div>
+                <div class="ml-2 flex flex-col gap-y-2 justify-center items-start">
+                    <p class="font-bold text-lg mt-3">জাতীয় জরুরি সেবা</p>
+                    <p class="leading-3 text-[#5C5C5C]">National Emergency</p>
+                    <p class="font-bold text-2xl mt-4">999</p>
+                    <button class="btn rounded-3xl max-w-[40%] bg-[#F2F2F2] text-[#5C5C5C]">সার্বজনীন</button>
+                </div>
+                <div class="ml-1 flex justify-between gap-x-2 py-1 ">
+                    <button class="copy-btn flex w-1/2 px-2 py-1 border border-[#D4D6D5] rounded-lg gap-x-1 justify-center items-center hover:bg-[#5f2b2b] text-[#5C5C5C] hover:text-white group">
+                        <img src="assets\paste.png" alt="copy-icon" class="w-4 h-4 group-hover:invert group-hover:brightness-0">
+                        Copy
+                    </button>
+                    <button
+                        id="call-emergency" class="call-btn bg-[#00A63E] flex text-white px-2 py-1 border rounded-lg w-1/2 gap-x-1 justify-center items-center hover:bg-[#5f2b2b]">
+                        <img src="assets/telephone.png" alt="telephone-icon" class="w-4 h-4">
+                        <p>Call</p>
+                    </button>
+                </div>
+            </div>
+            <!-- card 2 -->
+            <div class="card flex flex-col gap-y-2 bg-white rounded-[12px] p-4">
+                <div class="ml-2 flex justify-between items-center">
+                    <div class="bg-[#DFEFFF] rounded-[12px] w-12 h-12 flex justify-center items-center">
+                        <img src="assets/police.png" alt="" class="w-7 h-7">
+                    </div>
+                    <img src="assets/heart-new.png" alt="new-heart-icon" class="heart-class w-4 h-4 mr-2">
+                </div>
+                <div class="ml-2 flex flex-col gap-y-2 justify-center items-start">
+                    <p class="font-bold text-lg mt-3">পুলিশ</p>
+                    <p class="leading-3 text-[#5C5C5C]">Police</p>
+                    <p class="font-bold text-2xl mt-4">999</p>
+                    <button class="btn rounded-3xl max-w-[40%] bg-[#F2F2F2] text-[#5C5C5C]">পুলিশ</button>
+                </div>
+                <div class="ml-1 flex justify-between gap-x-2 py-1 ">
+                    <button class="copy-btn flex w-1/2 px-2 py-1 border border-[#D4D6D5] rounded-lg gap-x-1 justify-center items-center hover:bg-[#5f2b2b] text-[#5C5C5C] hover:text-white group">
+                        <img src="assets\paste.png" alt="copy-icon" class="w-4 h-4 group-hover:invert group-hover:brightness-0">
+                        Copy
+                    </button>
+                    <button
+                        id="call-police" class="call-btn bg-[#00A63E] flex text-white px-2 py-1 border rounded-lg w-1/2 gap-x-1 justify-center items-center hover:bg-[#5f2b2b]">
+                        <img src="assets/telephone.png" alt="telephone-icon" class="w-4 h-4">
+                        <p>Call</p>
+                    </button>
+                </div>
+            </div>
+            <!-- card 3 -->
+            <div class="card flex flex-col gap-y-2 bg-white rounded-[12px] p-4">
+                <div class="ml-2 flex justify-between items-center">
+                    <div class="bg-[#FFE3E1] rounded-[12px] w-12 h-12 flex justify-center items-center">
+                        <img src="assets/fire-service.png" alt="" class="w-6 h-6">
+                    </div>
+                    <img src="assets/heart-new.png" alt="new-heart-icon" class="heart-class w-4 h-4 mr-2">
+                </div>
+                <div class="ml-2 flex flex-col gap-y-2 justify-center items-start">
+                    <p class="font-bold text-lg mt-3">ফায়ার সার্ভিস</p>
+                    <p class="leading-3 text-[#5C5C5C]">Fire Service</p>
+                    <p class="font-bold text-2xl mt-4">999</p>
+                    <button class="btn rounded-3xl max-w-[40%] bg-[#F2F2F2] text-[#5C5C5C]">ফায়ার</button>
+                </div>
+                <div class="ml-1 flex justify-between gap-x-2 py-1 ">
+                    <button class="copy-btn flex w-1/2 px-2 py-1 border border-[#D4D6D5] rounded-lg gap-x-1 justify-center items-center hover:bg-[#5f2b2b] text-[#5C5C5C] hover:text-white group">
+                        <img src="assets\paste.png" alt="copy-icon" class="w-4 h-4 group-hover:invert group-hover:brightness-0">
+                        Copy
+                    </button>
+                    <button
+                        id="call-fire" class="call-btn bg-[#00A63E] flex text-white px-2 py-1 border rounded-lg w-1/2 gap-x-1 justify-center items-center hover:bg-[#5f2b2b]">
+                        <img src="assets/telephone.png" alt="telephone-icon" class="w-4 h-4">
+                        <p>Call</p>
+                    </button>
+                </div>
+            </div>
+            <!-- card 4 -->
+            <div class="card flex flex-col gap-y-2 bg-white rounded-[12px] p-4">
+                <div class="ml-2 flex justify-between items-center">
+                    <div class="bg-[#FFE3E1] rounded-[12px] w-12 h-12 flex justify-center items-center">
+                        <img src="assets/ambulance.png" alt="" class="w-6 h-6">
+                    </div>
+                    <img src="assets/heart-new.png" alt="new-heart-icon" class="heart-class w-4 h-4 mr-2">
+                </div>
+                <div class="ml-2 flex flex-col gap-y-2 justify-center items-start">
+                    <p class="font-bold text-lg mt-3">অ্যাম্বুলেন্স</p>
+                    <p class="leading-3 text-[#5C5C5C]">Ambulance</p>
+                    <p class="font-bold text-2xl mt-4">1994-999999</p>
+                    <button class="btn rounded-3xl max-w-[40%] bg-[#F2F2F2] text-[#5C5C5C]">অ্যাম্বুলেন্স</button>
+                </div>
+                <div class="ml-1 flex justify-between gap-x-2 py-1 ">
+                    <button class="copy-btn flex w-1/2 px-2 py-1 border border-[#D4D6D5] rounded-lg gap-x-1 justify-center items-center hover:bg-[#5f2b2b] text-[#5C5C5C] hover:text-white group">
+                        <img src="assets\paste.png" alt="copy-icon" class="w-4 h-4 group-hover:invert group-hover:brightness-0">
+                        Copy
+                    </button>
+                    <button
+                        id="call-ambulance" class="call-btn bg-[#00A63E] flex text-white px-2 py-1 border rounded-lg w-1/2 gap-x-1 justify-center items-center hover:bg-[#5f2b2b]">
+                        <img src="assets/telephone.png" alt="telephone-icon" class="w-4 h-4">
+                        <p>Call</p>
+                    </button>
+                </div>
+            </div>
+            <!-- card 5 -->
+            <div class="card flex flex-col gap-y-2 bg-white rounded-[12px] p-4">
+                <div class="ml-2 flex justify-between items-center">
+                    <div class="bg-[#FFE3E1] rounded-[12px] w-12 h-12 flex justify-center items-center">
+                        <img src="assets/emergency.png" alt="" class="w-6 h-6">
+                    </div>
+                    <img src="assets/heart-new.png" alt="new-heart-icon" class="heart-class w-4 h-4 mr-2">
+                </div>
+                <div class="ml-2 flex flex-col gap-y-2 justify-center items-start">
+                    <p class="font-bold text-lg mt-3">নারী ও শিশু সহায়তা</p>
+                    <p class="leading-3 text-[#5C5C5C]">Women & Child Helpline</p>
+                    <p class="font-bold text-2xl mt-4">109</p>
+                    <button class="btn rounded-3xl max-w-[40%] bg-[#F2F2F2] text-[#5C5C5C]">সহায়তা</button>
+                </div>
+                <div class="ml-1 flex justify-between gap-x-2 py-1 ">
+                    <button class="copy-btn flex w-1/2 px-2 py-1 border border-[#D4D6D5] rounded-lg gap-x-1 justify-center items-center hover:bg-[#5f2b2b] text-[#5C5C5C] hover:text-white group">
+                        <img src="assets\paste.png" alt="copy-icon" class="w-4 h-4 group-hover:invert group-hover:brightness-0">
+                        Copy
+                    </button>
+                    <button
+                        id="call-women" class="call-btn bg-[#00A63E] flex text-white px-2 py-1 border rounded-lg w-1/2 gap-x-1 justify-center items-center hover:bg-[#5f2b2b]">
+                        <img src="assets/telephone.png" alt="telephone-icon" class="w-4 h-4">
+                        <p>Call</p>
+                    </button>
+                </div>
+            </div>
+            <!-- card 6 -->
+            <div class="card flex flex-col gap-y-2 bg-white rounded-[12px] p-4">
+                <div class="ml-2 flex justify-between items-center">
+                    <div class="bg-[#FFE3E1] rounded-[12px] w-12 h-12 flex justify-center items-center">
+                        <img src="assets/emergency.png" alt="" class="w-6 h-6">
+                    </div>
+                    <img src="assets/heart-new.png" alt="new-heart-icon" class="heart-class w-4 h-4 mr-2">
+                </div>
+                <div class="ml-2 flex flex-col gap-y-2 justify-center items-start">
+                    <p class="font-bold text-lg mt-3">দুদক</p>
+                    <p class="leading-3 text-[#5C5C5C]">Anti-Corruption</p>
+                    <p class="font-bold text-2xl mt-4">106</p>
+                    <button class="btn rounded-3xl max-w-[40%] bg-[#F2F2F2] text-[#5C5C5C]">সরকারি</button>
+                </div>
+                <div class="ml-1 flex justify-between gap-x-2 py-1 ">
+                    <button class="copy-btn flex w-1/2 px-2 py-1 border border-[#D4D6D5] rounded-lg gap-x-1 justify-center items-center hover:bg-[#5f2b2b] text-[#5C5C5C] hover:text-white group">
+                        <img src="assets\paste.png" alt="copy-icon" class="w-4 h-4 group-hover:invert group-hover:brightness-0">
+                        Copy
+                    </button>
+                    <button
+                        id="call-anti" class="call-btn bg-[#00A63E] flex text-white px-2 py-1 border rounded-lg w-1/2 gap-x-1 justify-center items-center hover:bg-[#5f2b2b]">
+                        <img src="assets/telephone.png" alt="telephone-icon" class="w-4 h-4">
+                        <p>Call</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- card 7 -->
+            <div class="card flex flex-col gap-y-2 bg-white rounded-[12px] p-4">
+                <div class="ml-2 flex justify-between items-center">
+                    <div class="bg-[#FFE3E1] rounded-[12px] w-12 h-12 flex justify-center items-center">
+                        <img src="assets/emergency.png" alt="" class="w-6 h-6">
+                    </div>
+                    <img src="assets/heart-new.png" alt="new-heart-icon" class="heart-class w-4 h-4 mr-2">
+                </div>
+                <div class="ml-2 flex flex-col gap-y-2 justify-center items-start">
+                    <p class="font-bold text-lg mt-3">বিদ্যুৎ বিভ্রাট</p>
+                    <p class="leading-3 text-[#5C5C5C]">Electricity Outage</p>
+                    <p class="font-bold text-2xl mt-4">16216</p>
+                    <button class="btn rounded-3xl max-w-[40%] bg-[#F2F2F2] text-[#5C5C5C]">বিদ্যুৎ</button>
+                </div>
+                <div class="ml-1 flex justify-between gap-x-2 py-1 ">
+                    <button class="copy-btn flex w-1/2 px-2 py-1 border border-[#D4D6D5] rounded-lg gap-x-1 justify-center items-center hover:bg-[#5f2b2b] text-[#5C5C5C] hover:text-white group">
+                        <img src="assets\paste.png" alt="copy-icon" class="w-4 h-4 group-hover:invert group-hover:brightness-0">
+                        Copy
+                    </button>
+                    <button
+                        id="call-electricity" class="call-btn bg-[#00A63E] flex text-white px-2 py-1 border rounded-lg w-1/2 gap-x-1 justify-center items-center hover:bg-[#5f2b2b]">
+                        <img src="assets/telephone.png" alt="telephone-icon" class="w-4 h-4">
+                        <p>Call</p>
+                    </button>
+                </div>
+            </div>
+            <!-- card 8 -->
+            <div class="card flex flex-col gap-y-2 bg-white rounded-[12px] p-4">
+                <div class="ml-2 flex justify-between items-center">
+                    <div class="bg-[#FFE3E1] rounded-[12px] w-12 h-12 flex justify-center items-center">
+                        <img src="assets/emergency.png" alt="" class="w-6 h-6">
+                    </div>
+                    <img src="assets/heart-new.png" alt="new-heart-icon" class="heart-class w-4 h-4 mr-2">
+                </div>
+                <div class="ml-2 flex flex-col gap-y-2 justify-center items-start">
+                    <p class="font-bold text-lg mt-3">ব্র্যাক</p>
+                    <p class="leading-3 text-[#5C5C5C]">Brac</p>
+                    <p class="font-bold text-2xl mt-4">16445</p>
+                    <button class="btn rounded-3xl max-w-[40%] bg-[#F2F2F2] text-[#5C5C5C]">এনজিও</button>
+                </div>
+                <div class="ml-1 flex justify-between gap-x-2 py-1 ">
+                    <button class="copy-btn flex w-1/2 px-2 py-1 border border-[#D4D6D5] rounded-lg gap-x-1 justify-center items-center hover:bg-[#5f2b2b] text-[#5C5C5C] hover:text-white group">
+                        <img src="assets\paste.png" alt="copy-icon" class="w-4 h-4 group-hover:invert group-hover:brightness-0">
+                        Copy
+                    </button>
+                    <button
+                        id="call-brac" class="call-btn bg-[#00A63E] flex text-white px-2 py-1 border rounded-lg w-1/2 gap-x-1 justify-center items-center hover:bg-[#5f2b2b]">
+                        <img src="assets/telephone.png" alt="telephone-icon" class="w-4 h-4">
+                        <p>Call</p>
+                    </button>
+                </div>
+            </div>
+            <!-- card 9 -->
+            <div class="card flex flex-col gap-y-2 bg-white rounded-[12px] p-4">
+                <div class="ml-2 flex justify-between items-center">
+                    <div class="bg-[#FFE3E1] rounded-[12px] w-12 h-12 flex justify-center items-center">
+                        <img src="assets/emergency.png" alt="" class="w-6 h-6">
+                    </div>
+                    <img src="assets/heart-new.png" alt="new-heart-icon" class="heart-class w-4 h-4 mr-2">
+                </div>
+                <div class="ml-2 flex flex-col gap-y-2 justify-center items-start">
+                    <p class="font-bold text-lg mt-3">বাংলাদেশ রেলওয়ে</p>
+                    <p class="leading-3 text-[#5C5C5C]">Bangladesh Railway</p>
+                    <p class="font-bold text-2xl mt-4">163</p>
+                    <button class="btn rounded-3xl max-w-[40%] bg-[#F2F2F2] text-[#5C5C5C]">পরিবহন</button>
+                </div>
+                <div class="ml-1 flex justify-between gap-x-2 py-1 ">
+                    <button class="copy-btn flex w-1/2 px-2 py-1 border border-[#D4D6D5] rounded-lg gap-x-1 justify-center items-center hover:bg-[#5f2b2b] text-[#5C5C5C] hover:text-white group">
+                        <img src="assets\paste.png" alt="copy-icon" class="w-4 h-4 group-hover:invert group-hover:brightness-0">
+                        Copy
+                    </button>
+                    <button
+                        id="call-railway" class="call-btn bg-[#00A63E] flex text-white px-2 py-1 border rounded-lg w-1/2 gap-x-1 justify-center items-center hover:bg-[#5f2b2b]">
+                        <img src="assets/telephone.png" alt="telephone-icon" class="w-4 h-4">
+                        <p>Call</p>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- history holder  -->
+        <div class="bg-white px-2 flex flex-col justify-start py-4 mt-4 shadow rounded-[12px] md:w-[30%] max-h-[955px]">
+            <div class="flex justify-between items-center px-4">
+                <div class="flex justify-center items-center">
+                    <i class="fa-regular fa-clock text-[#5C5C5C]"></i>
+                    <p class="ml-1 font-semibold">Call History</p>
+                </div>
+                <button id="clear-btn" class="btn rounded-3xl text-white font-semibold px-6 bg-[#00A63E]">Clear</button>
+            </div>
+            <!-- history cards holder  -->
+            <div id="history-holder" class="flex flex-col gap-y-3 justify-between bg-white px-3">
+      
+            </div>
+        </div>
+    </div>
+  <!-- Link external JS -->
+  <script src="js/index.js"></script>
 </body>
 </html>
