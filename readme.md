@@ -18,5 +18,8 @@
 4. What is **Event Delegation** in JavaScript? Why is it useful?
     ans->
       Instead of putting event listeners on many child elements, we put one listener on the parent and check which child was clicked.
-      
+
 5. What is the difference between **preventDefault() and stopPropagation()** methods?
+    ans->
+      preventDefault() → stops the default action (like a form submitting).
+      stopPropagation() → stops the event from bubbling up to parent elements.
