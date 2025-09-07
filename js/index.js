@@ -40,8 +40,6 @@ callButtons.forEach(button => {
         const now = new Date();
         const localTime = now.toLocaleTimeString();
 
-        console.log(localTime); 
-
         if(totalRemCoinBeforeCall >= 20){
             coinAvailable.innerText = totalRemCoinBeforeCall - 20;
             totalRemCoinBeforeCall = totalRemCoinBeforeCall - 20;
